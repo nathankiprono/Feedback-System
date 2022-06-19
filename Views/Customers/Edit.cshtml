@@ -1,0 +1,135 @@
+﻿@model Inquiry__Management__System.Models.Customers
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+
+
+
+<form asp-action="Edit" style="border:solid 1px white;padding:8px;box-shadow:0 6px 10px 0 rgba(0,0,0,0.2)">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Customer_Id" />
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <label class="form-field">Agent Name</label>
+            <input asp-for="Agent_Id" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="Agent_Id" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="col-md-4">
+            <label class="form-field">Full Name</label>
+            <input asp-for="FullName" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="col-md-4">
+            <label class="form-field">Gender</label>
+
+            <input asp-for="Gender" class="form-control" style="border-radius:20px">
+
+            <span asp-validation-for="Gender" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+
+            <label class="form-field">National Id</label>
+
+            <input asp-for="National_Id" type="number" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="National_Id" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-4">
+
+            <label class="form-field">Nationality </label>
+
+            <input asp-for="Nationality" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="Nationality" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+
+            <label class="form-field">DOB </label>
+
+            <input asp-for="DOB" class="form-control" type="text" style="border-radius:20px" />
+
+            <span asp-validation-for="DOB" class="text-danger"></span>
+        </div>
+
+        <div class="col-sm-4">
+
+            <label class="form-field">Passport No </label>
+
+            <input asp-for="Passport_No" class="form-control" type="text" style="border-radius:20px" />
+
+            <span asp-validation-for="Passport_No" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+
+            <label class="form-field">Height</label>
+
+            <input asp-for="Height" class="form-control" type="text" style="border-radius:20px" />
+
+            <span asp-validation-for="Height" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+
+            <label class="form-field">Location </label>
+
+            <input asp-for="Location" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="Location" class="text-danger"></span>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        
+        
+        <div class="col-sm-4">
+
+            <label class="form-field">Weight </label>
+
+            <input asp-for="Weight" type="tel" class="form-control" style="border-radius:20px" />
+            <span asp-validation-for="Weight" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+
+            <label class="form-field">Registration Date </label>
+
+            <input asp-for="RegistrationDate" class="form-control" type="text" style="border-radius:20px" />
+
+            <span asp-validation-for="RegistrationDate" class="text-danger"></span>
+        </div>
+        <div class="col-sm-4">
+
+            <label class="form-field">Notes (Optional)  </label>
+            <textarea asp-for="Notes" class="form-control"></textarea>
+
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+        <div class="col-sm-4">
+
+            <a asp-action="Index" class="btn btn-dark">Back to List</a>
+
+        </div>
+    </div>
+</form>
+ 
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

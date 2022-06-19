@@ -1,0 +1,259 @@
+﻿@model Inquiry__Management__System.Models.Company_Information
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+@if (TempData["massage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>Opps!!....</strong>@TempData["massage"]
+    </div>
+}
+<div class="row g-3 mb-4 align-items-center justify-content-between">
+    <div class="col-auto">
+
+        <h2 class="app-page-title" style="margin-left:auto">Company Info.</h2>
+    </div>
+    <div class="col-auto">
+        <div class="page-utilities">
+            <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                <div class="col-auto">
+
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for names.." title="Type in a name">
+
+                </div><!--//col-->
+
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New <span class="fa fa-plus"></span> </button>
+
+                </div>
+            </div><!--//row-->
+        </div><!--//table-utilities-->
+    </div><!--//col-auto-->
+</div>
+<div style="overflow-x:auto">
+    <div class="innerTile">
+        <table class="table table-bordered" id="myTable" style="border:solid 1px white;padding:8px;box-shadow:0 6px 10px 0 rgba(0,0,0,0.2)">
+            <thead>
+                <tr>
+                    <th>
+                        Company Name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Conctacts)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Location)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Description)
+                    </th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.company_Information)
+                {
+                    <tr>
+                        <td>
+                            @item.Company_Name
+                        </td>
+                        <td>
+                            @item.Conctacts
+                        </td>
+                        <td>
+                            @item.Address
+                        </td>
+                        <td>
+                            @item.Location
+                        </td>
+                        <td>
+                            @item.Description
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Company_Id"><span class="fa fa-edit"></span></a> |
+                            <a asp-action="Details" asp-route-id="@item.Company_Id"><span class="fa fa-list-alt"></span></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Company_Id"><span class="fa fa-trash-alt text-danger"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="container">
+            @if (pager.TotalPages > 0)
+            {
+                <ul class="pagination  justify-content-end">
+
+                    @if (pager.CurrentPage > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Company_Information" asp-action="Index" asp-route-pg="1">First</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Company_Information" asp-action="Index" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                        </li>
+                    }
+
+                    @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                    {
+
+
+                        <li class="page-item @(pge==pager.CurrentPage? "active": "")">
+                            <a class="page-link" asp-controller="Company_Information" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                        </li>
+                    }
+
+                    @if (pager.CurrentPage < pager.TotalPages)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Company_Information" asp-action="Index" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" asp-controller="Company_Information" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
+                        </li>
+                    }
+                </ul>
+            }
+
+        </div>
+    </div>
+</div>
+
+<div id="myModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content ">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title text-white "><b class="text-center">Add .</b></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body ">
+                <br />
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Company Name<span style="color: red">*</span></label>
+                            <input asp-for="Company_Name" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Company_Name" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Conctacts<span style="color: red">*</span></label>
+
+                            <input asp-for="Conctacts" type="tel" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Conctacts" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-4">
+
+                            <label class="form-field">Address<span style="color: red">*</span></label>
+
+                            <input asp-for="Address" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+
+                        <div class="col-sm-4">
+
+                            <label class="form-field">Location  <span style="color: red">*</span></label>
+
+                            <input asp-for="Location" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Location" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <label class="form-field">Description  </label>
+                            <textarea asp-for="Description" class="form-control"></textarea>
+
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                    </div>
+                    <br />
+
+
+
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <input type="submit" value="Submit" class="btn btn-primary" style="width:200px;" />
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .innerTile {
+        background-color: white;
+        min-width: 1000px;
+        height: 100%;
+        border-color: gray;
+        border-radius: 5px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        border: solid 1px white;
+        padding: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        padding-right: 24px
+    }
+</style>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,92 @@
+﻿@model Inquiry__Management__System.Models.Feedback
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Update</h2>
+
+
+<hr />
+
+        <form asp-action="Edit" style="border:solid 1px white;padding:8px;box-shadow:0 6px 10px 0 rgba(0,0,0,0.2)">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Feedback_Id" />
+            <div class="row">
+
+                <br />
+                <div class="col-md-4">
+                    <label class="form-field">Customer Name</label>
+                    <input asp-for="Customer_Id" class="form-control" style="border-radius:20px" />
+                    <span asp-validation-for="Customer_Id" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="col-md-4">
+                    <label class="form-field">Product</label>
+
+                    <input asp-for="Product_Id" class="form-control" style="border-radius:20px" />
+                    <span asp-validation-for="Product_Id" class="text-danger"></span>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-field">Cost</label>
+
+                    <input asp-for="Cost" class="form-control" style="border-radius:20px" />
+                    <span asp-validation-for="Cost" class="text-danger"></span>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="form-field">Results</label>
+
+                    <input asp-for="Results" class="form-control" style="border-radius:20px" />
+                    <span asp-validation-for="Results" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <label class="form-field">Date  </label>
+                    <div>
+                        <input asp-for="Date" class="form-control" style="border-radius:20px" />
+                    </div>
+
+                    <span asp-validation-for="Date" class="text-danger"></span>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <label class="form-field">IsInvoiced  </label>
+                    <div>
+                        <input asp-for="IsInvoice" class="form-control" style="border-radius:20px" />
+                    </div>
+
+                    <span asp-validation-for="IsInvoice" class="text-danger"></span>
+                </div>
+
+            </div>
+            <br />
+
+
+
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <input type="submit" value="Save" class="btn btn-primary" style="width:200px;" />
+                </div>
+
+                <div class="col-sm-4">
+
+                    <a asp-action="Index" class="btn btn-dark">Back to List</a>
+
+                </div>
+            </div>
+        </form>
+ 
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

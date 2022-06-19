@@ -1,0 +1,78 @@
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.deps.json
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.runtimeconfig.json
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.runtimeconfig.dev.json
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.dll
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.pdb
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.Views.dll
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\bin\Debug\netcoreapp2.2\Inquiry _Management _System.Views.pdb
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.RazorAssemblyInfo.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.RazorAssemblyInfo.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.AssemblyInfo.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.TagHelpers.input.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.TagHelpers.output.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.RazorCoreGenerate.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\AgentProductCosts\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\AgentProductCosts\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\AgentProductCosts\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\AgentProductCosts\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\AgentProductCosts\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Agents\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Agents\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Agents\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Agents\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Agents\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Company_Information\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Company_Information\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Company_Information\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Company_Information\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Company_Information\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Customers\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Customers\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Customers\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Customers\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Customers\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Feedbacks\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Feedbacks\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Feedbacks\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Feedbacks\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Feedbacks\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Invoices\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Payments\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Payments\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Payments\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Payments\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Payments\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Products\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Products\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Products\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Products\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Products\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Registrations\Create.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Registrations\Delete.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Registrations\Details.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Registrations\Edit.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Registrations\Index.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout1.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LoginPartial.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.RazorTargetAssemblyInfo.cache
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.RazorTargetAssemblyInfo.cs
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.Views.pdb
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.dll
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.pdb
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.csproj.CopyComplete
+C:\Users\User\source\repos\Inquiry _Management _System\Inquiry _Management _System\obj\Debug\netcoreapp2.2\Inquiry _Management _System.csprojAssemblyReference.cache

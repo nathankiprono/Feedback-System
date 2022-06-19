@@ -1,0 +1,213 @@
+﻿@model Inquiry__Management__System.Models.Products
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<div class="row g-3 mb-4 align-items-center justify-content-between">
+    <div class="col-auto">
+
+        <h2 class="app-page-title" style="margin-left:auto">Products.</h2>
+    </div>
+    <div class="col-auto">
+        <div class="page-utilities">
+            <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                <div class="col-auto">
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for names.." title="Type in a name">
+
+
+                </div><!--//col-->
+
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add New <span class="fa fa-plus"></span> </button>
+
+                </div>
+            </div><!--//row-->
+        </div><!--//table-utilities-->
+    </div><!--//col-auto-->
+</div>
+<div class="innerTile">
+    <table class="table table-bordered" id="myTable">
+        <thead>
+            <tr>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Cost
+                </th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.products)
+            {
+                <tr>
+                    <td>
+                        @item.Product_Name
+                    </td>
+                    <td>
+                        @item.Cost
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Product_Id"><span class="fa fa-edit"></span></a> |
+                        <a asp-action="Details" asp-route-id="@item.Product_Id"><span class="fa fa-list-alt"></span></a> |
+                        <a asp-action="Delete" asp-route-id="@item.Product_Id"><span class="fa fa-trash-alt text-danger"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+    <div class="container">
+        @if (pager.TotalPages > 0)
+        {
+            <ul class="pagination  justify-content-end">
+
+                @if (pager.CurrentPage > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Products" asp-action="Index" asp-route-pg="1">First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Products" asp-action="Index" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                    </li>
+                }
+
+                @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                {
+
+
+                    <li class="page-item @(pge==pager.CurrentPage? "active": "")">
+                        <a class="page-link" asp-controller="Products" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                    </li>
+                }
+
+                @if (pager.CurrentPage < pager.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Products" asp-action="Index" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Products" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
+                    </li>
+                }
+            </ul>
+        }
+
+    </div>
+</div>
+
+
+
+<div id="myModal" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content ">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title text-white "><b class="text-center">Add New Product.</b></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body ">
+
+
+
+                <br />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Product Name<span style="color: red">*</span></label>
+                            <input asp-for="Product_Name" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Product_Name" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Cost<span style="color: red">*</span></label>
+
+                            <input asp-for="Cost" type="tel" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Cost" class="text-danger"></span>
+                        </div>
+                        
+                    </div>
+                    <br />
+                    
+                    <br />
+
+
+
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <input type="submit" value="Submit" class="btn btn-primary" style="width:200px;" />
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<style>
+    .innerTile {
+        min-width: 100%;
+        height: 100%;
+        border-color: gray;
+        border-radius: 5px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        border: solid 1px white;
+        padding: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        padding-right: 24px
+    }
+</style>
+
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

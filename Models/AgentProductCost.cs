@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Inquiry__Management__System.Models
+{
+    public class AgentProductCost
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Agent_Id { get; set; }
+        public string Product_Id { get; set; }
+        [Required]
+        public double Cost { get; set; }
+    }
+}

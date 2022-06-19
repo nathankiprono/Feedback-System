@@ -1,0 +1,371 @@
+﻿@model Inquiry__Management__System.Models.Feedback
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if(ViewBag.Pager!= null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+
+<div class=" row g-3 mb-4 align-items-center justify-content-between">
+    <div class="col-auto">
+
+        <h2 class="app-page-title" style="margin-left:auto">Responses.</h2>
+    </div>
+    <div class="col-auto">
+        <div class="page-utilities">
+            <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
+                <div class="col-auto">
+
+                    <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search for names.." title="Type in a name">
+
+                </div><!--//col-->
+
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Add New <span class="fa fa-plus"></span> </button>
+
+
+                </div>
+                <div class="col-auto">
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Print  <span class="fa fa-print"></span></button>
+
+
+                </div>
+            </div><!--//row-->
+        </div><!--//table-utilities-->
+    </div><!--//col-auto-->
+</div>
+<div style="overflow-x:auto">
+    <div class="innerTile">
+        <table class="table table-bordered" id="myTable" data-name="mytable" style="border:solid 1px white;padding:8px;box-shadow:0 6px 10px 0 rgba(0,0,0,0.2)">
+            <thead>
+                <tr>
+                    <th>
+                        Customer
+                    </th>
+                    <th>
+                        Product
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Results)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Date)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IsInvoice)
+                    </th>
+
+                    <th>Action</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in ViewBag.feedbacks)
+                {
+                    <tr>
+                        <td>
+                            @item.Customer_Id
+                        </td>
+                        <td>
+                            @item.Product_Id
+                        </td>
+                        <td>
+                            @item.Results
+                        </td>
+                        <td>
+                            @item.Date
+                        </td>
+                        <td>
+                            @item.Cost
+                        </td>
+                        <td>
+                            @item.IsInvoice
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.Feedback_Id"><span class="fa fa-edit"></span></a> |
+                            <a asp-action="Details" asp-route-id="@item.Feedback_Id"><span class="fa fa-list-alt"></span></a> |
+                            <a asp-action="Delete" asp-route-id="@item.Feedback_Id"><span class="fa fa-trash-alt text-danger"></span></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="container">
+            @if (pager.TotalPages > 0)
+            {
+            <ul class="pagination  justify-content-end">
+
+                @if (pager.CurrentPage>1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Feedbacks" asp-action="Index" asp-route-pg="1">First</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Feedbacks" asp-action="Index" asp-route-pg="@(pager.CurrentPage-1)">Previous</a>
+                    </li>
+                }
+
+                @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+                {
+
+
+                    <li class="page-item @(pge==pager.CurrentPage? "active": "")">
+                        <a class="page-link" asp-controller="Feedbacks" asp-action="Index" asp-route-pg="@pge">@pge</a>
+                    </li>
+                }
+
+                @if (pager.CurrentPage < pager.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Feedbacks" asp-action="Index" asp-route-pg="@(pager.CurrentPage+1)">Next</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" asp-controller="Feedbacks" asp-action="Index" asp-route-pg="@(pager.TotalPages)">Last</a>
+                    </li>
+                }
+            </ul>
+            }
+
+        </div>
+    </div>
+</div>
+<style>
+    .innerTile {
+        background-color: white;
+        min-width: 1000px;
+        height: 100%;
+        border-color: gray;
+        border-radius: 5px;
+        padding-left: 24px;
+        padding-right: 24px;
+        padding-top: 24px;
+        border: solid 1px white;
+        padding: 8px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        padding-right: 24px
+    }
+</style>
+
+
+
+
+
+<div id="myModal1" class="modal fade " role="dialog">
+    <div class="modal-dialog modal-lg">
+         Modal content
+        <div class="modal-content ">
+            <div class="modal-header bg-primary">
+                <h4 class="modal-title text-white "><b class="text-center">Add New Feedback.</b></h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <div class="modal-body ">
+
+
+
+                <br />
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Customer Name<span style="color: red">*</span></label>
+                            <select asp-for="Customer_Id" class="form-control" asp-items="ViewBag.Customer_Id"></select>
+                            <span asp-validation-for="Customer_Id" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Product<span style="color: red">*</span></label>
+
+                            <select asp-for="Product_Id" class="form-control" asp-items="ViewBag.Product_Id"></select>
+                            <span asp-validation-for="Product_Id" class="text-danger"></span>
+                        </div>
+                        <br />
+                        <div class="col-md-4">
+                            <label class="form-field">Cost<span style="color: red">*</span></label>
+
+                            <input asp-for="Cost" id="" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Cost" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+
+                        <div class="col-sm-4">
+
+                            <label class="form-field">Results<span style="color: red">*</span></label>
+
+                            <input asp-for="Results" id="saleprice" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Results" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <label class="form-field">Date  <span style="color: red">*</span></label>
+                            <div class="form-control" style="border-radius:20px">
+                                <input asp-for="Date" placeholder="Select date" id="datepicker" type="text" />
+                            </div>
+
+                            <span asp-validation-for="Date" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-4">
+
+                            <label class="form-field">IsInvoiced</label>
+
+                            <input asp-for="IsInvoice" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="IsInvoice" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-sm-4" hidden>
+
+                            <label class="form-field">Invoice Date</label>
+
+                            <input asp-for="Invoice_Date" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Invoice_Date" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-sm-4" hidden>
+
+                            <label class="form-field">Ispaid  </label>
+                            <div>
+                                <input asp-for="Ispaid" type="text" class="form-control" style="border-radius:20px" />
+                            </div>
+
+                            <span asp-validation-for="Ispaid" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-4" hidden>
+
+                            <label class="form-field">Payment Reference</label>
+
+                            <input asp-for="Payment_Ref" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Payment_Ref" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+
+
+
+                        <div class="col-sm-4" hidden>
+
+                            <label class="form-field">Payment Date </label>
+                            <div>
+                                <input asp-for="Payment_Date" class="form-control" style="border-radius:20px" type="text" />
+                            </div>
+
+                            <span asp-validation-for="Payment_Date" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-4" hidden>
+
+                            <label class="form-field">Invoice Number</label>
+
+                            <input asp-for="Invoice_No" class="form-control" style="border-radius:20px" />
+                            <span asp-validation-for="Invoice_No" class="text-danger"></span>
+                        </div>
+
+
+                    </div>
+                    <br />
+
+
+
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <input type="submit" value="Submit" class="btn btn-primary" style="width:200px;" />
+                        </div>
+
+                        <div class="col-sm-4">
+
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, alltables;
+        alltables = document.querySelectorAll("table[data-name=mytable]");
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        alltables.forEach(function (table) {
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        });
+    }
+    function printForm() {
+
+        printJS({
+            printable: 'toprint', type: 'html', targetStyles: ['*'],
+
+
+            honorColor: true,
+            documentTitle: 'MICROPOINT',
+            targetStyles: ['*'],
+            header: '<div ><div style="font-size:large;text-align:center" ><h1 class="text-center ">ALPHA UHAI BORA LABS.<hr style="font-size:large;color:black"><hr></h1></div><div style="font-size:large;text-align:center"><b>Address:4690 Nairobi</b>,</div><div style="font-size:large;text-align:center"><b>Phone: +254 799 092 727</b>,</div><div style="font-size:large;text-align:center"><b>Emai: email@gmail.com</b>,</div><div style="font-size:large;text-align:center"><b>website: www.website.com.</b></div></div>',
+
+
+        });
+
+
+
+    }
+    var datepicker = new ej.calendars.DatePicker({
+        format: 'dd-MMM-yy',
+        value: new Date(),
+    });
+    datepicker.appendTo('#datepicker');
+    var dropDownInstance = new ej.dropdowns.DropDownList({
+        placeholder: 'Format',
+        floatLabelType: 'Auto',
+        change: onChange
+    });
+    dropDownInstance.appendTo('#dateformats');
+
+    function onChange() {
+        //dropdown change event handler
+        datepicker.format = dropDownInstance.value;
+
+
+    }
+</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

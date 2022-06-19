@@ -1,0 +1,15 @@
+﻿<ul class="navbar-nav ml-0">
+    @if (User.Identity.IsAuthenticated)
+    {
+       
+        @Html.ActionLink("Logout", "Logout", "Home", null, new { @class = "text-left", style = "color:white" })
+
+    }
+    else
+    {
+       
+        <li class="nav-item " style="margin-left:auto">
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+        </li>
+    }
+</ul>
